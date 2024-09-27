@@ -22,7 +22,13 @@ if (bikeId) {
       if (response.ok) {
         return response.json();
       } else {
-        throw new Error("C'è qualche problema");
+        if (response.status >= 300 && response.status < 400) {
+          throw new Error("Redirezione imprevista.");
+        } else if (response.status >= 400 && response.status < 500) {
+          throw new Error("Richiesta non valida dal client.");
+        } else if (response.status >= 500) {
+          throw new Error("Errore interno del server.");
+        }
       }
     })
     .then((bike) => {
@@ -63,7 +69,13 @@ if (bikeId) {
               location.href = "./index.html";
             });
           } else {
-            throw new Error("Ci sono dei problemi nel trovare la bici");
+            if (response.status >= 300 && response.status < 400) {
+              throw new Error("Redirezione imprevista.");
+            } else if (response.status >= 400 && response.status < 500) {
+              throw new Error("Richiesta non valida dal client.");
+            } else if (response.status >= 500) {
+              throw new Error("Errore interno del server.");
+            }
           }
         });
       });
@@ -112,7 +124,13 @@ bikeForm.addEventListener("submit", (e) => {
           location.href = "./index.html";
         });
       } else {
-        throw new Error("Qualcosa è andato storto");
+        if (response.status >= 300 && response.status < 400) {
+          throw new Error("Redirezione imprevista.");
+        } else if (response.status >= 400 && response.status < 500) {
+          throw new Error("Richiesta non valida dal client.");
+        } else if (response.status >= 500) {
+          throw new Error("Errore interno del server.");
+        }
       }
     })
     .catch((err) => {

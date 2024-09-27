@@ -10,7 +10,13 @@ const loadBike = () => {
       if (response.ok) {
         return response.json();
       } else {
-        throw new Error("errore nel caricamento");
+        if (response.status >= 300 && response.status < 400) {
+          throw new Error("Redirezione imprevista.");
+        } else if (response.status >= 400 && response.status < 500) {
+          throw new Error("Richiesta non valida dal client.");
+        } else if (response.status >= 500) {
+          throw new Error("Errore interno del server.");
+        }
       }
     })
     .then((bikes) => {
