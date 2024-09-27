@@ -27,6 +27,9 @@ const loadBike = () => {
         img.src = bike.imageUrl;
         img.classList.add("bd-placeholder-img", "card-img-top", "p-2", "sameSize");
         img.role = "button";
+        img.addEventListener("click", () => {
+          location.href = "./details.html?bikeId=" + bike._id;
+        });
 
         const cardBody = document.createElement("div");
         cardBody.classList.add("card-body");
@@ -35,6 +38,9 @@ const loadBike = () => {
         cardTitle.classList.add("card-title", "fw-bold", "text-truncate");
         cardTitle.innerText = bike.name;
         cardTitle.role = "button";
+        cardTitle.addEventListener("click", () => {
+          location.href = "./details.html?bikeId=" + bike._id;
+        });
 
         const brand = document.createElement("p");
         brand.classList.add("card-text");
@@ -55,7 +61,7 @@ const loadBike = () => {
 
         const price = document.createElement("small");
         price.classList.add("fw-bold");
-        price.innerText = bike.price + "€";
+        price.innerText = bike.price + ",00 €";
 
         cardFooter.append(btnEdit, price);
         cardBody.append(cardTitle, brand);

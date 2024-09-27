@@ -38,6 +38,9 @@ if (bikeId) {
       const deleteBtn = document.getElementById("deleteBtn");
       deleteBtn.classList.remove("d-none");
 
+      const submitBtn = document.getElementById("submitBtn");
+      submitBtn.innerText = "Modifica";
+
       const confrimDeleteBtn = document.getElementById("confrimDeleteBtn");
       confrimDeleteBtn.addEventListener("click", () => {
         fetch(urlApi + bikeId, {
@@ -71,8 +74,8 @@ bikeForm.addEventListener("submit", (e) => {
 
   const newBike = new Bike(name, description, brand, imgUrl, price);
 
-  fetch(urlApi, {
-    method: "POST",
+  fetch(bikeId ? urlApi + bikeId : urlApi, {
+    method: bikeId ? "PUT" : "POST",
     body: JSON.stringify(newBike),
     headers: {
       "Content-type": "application/json",
