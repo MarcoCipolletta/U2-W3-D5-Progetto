@@ -50,7 +50,7 @@ const loadBike = () => {
         btnEdit.type = "button";
         btnEdit.innerText = "Edit";
         btnEdit.addEventListener("click", () => {
-          location.href = "./back-office.html?contentId=" + bike._id;
+          location.href = "./back-office.html?bikeId=" + bike._id;
         });
 
         const price = document.createElement("small");

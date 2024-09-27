@@ -56,7 +56,8 @@
               </div>
 
               <button type="submit" class="btn btn-primary">Inserisci la bici</button>
-              <button type="button" data-bs-toggle="modal" data-bs-target="#confirmReset" class="btn btn-danger">Reset</button>
+              <button type="button" data-bs-toggle="modal" data-bs-target="#confirmReset" class="btn btn-warning">Reset</button>
+              <button type="button" id="deleteBtn" data-bs-toggle="modal" data-bs-target="#confirmDelete" class="btn btn-danger d-none">Delete bike</button>
               <div class="modal fade" id="confirmReset" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                   <div class="modal-content">
@@ -68,6 +69,21 @@
                     <div class="modal-footer">
                       <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Annulla</button>
                       <button type="reset" class="btn btn-danger" data-bs-dismiss="modal">Conferma</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal fade" id="confirmDelete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="modalTitle">Pensaci bene</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">Sei sicuro di voler cancellare questa bici?</div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Annulla</button>
+                      <button type="button" id="confrimDeleteBtn" class="btn btn-danger" data-bs-dismiss="modal">Conferma</button>
                     </div>
                   </div>
                 </div>
