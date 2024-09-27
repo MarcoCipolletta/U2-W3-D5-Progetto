@@ -8,6 +8,8 @@ class Bike {
   }
 }
 
+const backgroundModal = document.getElementById("backgroundModal");
+
 const addressBarLink = new URLSearchParams(location.search);
 const bikeId = addressBarLink.get("bikeId");
 if (bikeId) {
@@ -50,8 +52,16 @@ if (bikeId) {
           }
         }).then((response) => {
           if (response.ok) {
-            alert("Bici eliminata");
-            location.href = "./index.html";
+            const bikeDeleted = document.getElementById("bikeDeleted");
+            bikeDeleted.classList.add("show");
+            bikeDeleted.role = "dialog";
+            bikeDeleted.style.display = "block";
+            backgroundModal.classList.remove("d-none");
+            const btndDelSuccess = document.getElementById("btndDelSuccess");
+            btndDelSuccess.addEventListener("click", () => {
+              backgroundModal.classList.add("d-none");
+              location.href = "./index.html";
+            });
           } else {
             throw new Error("Ci sono dei problemi nel trovare la bici");
           }
@@ -84,8 +94,22 @@ bikeForm.addEventListener("submit", (e) => {
   })
     .then((response) => {
       if (response.ok) {
-        //momentaneamente
-        alert("Bici salvata");
+        const bikeAdded = document.getElementById("bikeAdded");
+
+        bikeAdded.classList.add("show");
+        bikeAdded.role = "dialog";
+        bikeAdded.style.display = "block";
+        backgroundModal.classList.remove("d-none");
+
+        const modalBody = document.querySelector("#bikeAdded .modal-body");
+        modalBody.innerText = bikeId ? "Bici modificata con successo!" : "Bici aggiunta con successo!";
+
+        const btnAddedSuccess = document.getElementById("btnAddedSuccess");
+
+        btnAddedSuccess.addEventListener("click", () => {
+          backgroundModal.classList.remove("d-none");
+          location.href = "./index.html";
+        });
       } else {
         throw new Error("Qualcosa è andato storto");
       }
