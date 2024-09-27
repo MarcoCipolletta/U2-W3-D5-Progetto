@@ -94,6 +94,7 @@ bikeForm.addEventListener("submit", (e) => {
   })
     .then((response) => {
       if (response.ok) {
+        console.log(response.status);
         const bikeAdded = document.getElementById("bikeAdded");
 
         bikeAdded.classList.add("show");
