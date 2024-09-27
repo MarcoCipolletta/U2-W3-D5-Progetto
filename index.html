@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CycleSmart</title>
+    <link rel="stylesheet" href="./assets/style/custom-bootstrap.css" />
+  </head>
+  <body>
+    <header class="position-sticky top-0 z-3 shadow-sm">
+      <nav class="navbar navbar-expand-lg bg-body-secondary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="./assets/imgs/Logo.png" alt="CycleSmart Logo" width="75px" />
+            CycleSmart
+          </a>
+          <div class="" id="navbarSupportedContent">
+            <ul class="navbar-nav me-3 mb-0 flex-row gap-3">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./back-office.html">Back Office</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- search box disabilitato -->
+    <div class="container mt-4">
+      <div class="row justify-content-center">
+        <div class="col col-md-7">
+          <div class="mb-3 d-flex gap-2 justify-content-center">
+            <input class="form-control" id="searchInput" placeholder="Search bike &lpar;Coming soon&rpar;" disabled />
+            <button type="button" id="searchBtn" class="btn btn-success disabled">Search</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- cards delle bici -->
+    <main>
+      <div class="album py-5">
+        <div class="container">
+          <div class="row g-3" id="rowBikes">
+            <!-- <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <img src="https://picsum.photos/id/237/300/200" class="bd-placeholder-img card-img-top" />
+                <div class="card-body">
+                  <h5 class="card-title">Aeroad CF SLX 8 Di2 Speed</h5>
+                  <p class="card-text">Canyon</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                    <small>100€</small>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./assets/script/api.js"></script>
+    <script src="./assets/script/index.js"></script>
+  </body>
+</html>
