@@ -14,6 +14,14 @@ if (bikeId) {
       }
     })
     .then((bike) => {
+      const loadPage = document.getElementById("loadPage");
+      loadPage.classList.add("d-none");
+
+      const btnsDNone = document.querySelectorAll(".btn.d-none");
+      btnsDNone.forEach((btn) => {
+        btn.classList.remove("d-none");
+      });
+
       const brand = document.getElementById("brand");
       const title = document.getElementById("title");
       const image = document.getElementById("image");

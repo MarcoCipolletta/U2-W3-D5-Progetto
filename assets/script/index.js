@@ -14,9 +14,10 @@ const loadBike = () => {
       }
     })
     .then((bikes) => {
-      console.log(bikes);
+      const loadPage = document.getElementById("loadPage");
+      loadPage.classList.add("d-none");
+
       bikes.forEach((bike) => {
-        //nuovo
         const col = document.createElement("div");
         col.classList.add("col-12", "col-md-4", "col-lg-3");
 

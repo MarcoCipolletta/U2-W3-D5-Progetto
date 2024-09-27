@@ -11980,6 +11980,11 @@ input[type=number]::-webkit-outer-spin-button {
      object-position: center;
   transition: all 0.3s ease-in-out;
 }
+@media screen and (max-width: 767px) {
+  .sameSize {
+    height: 250px;
+  }
+}
 
 .card:hover .sameSize {
   transform: scale(1.1);

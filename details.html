@@ -10,7 +10,7 @@
     <header class="position-sticky top-0 z-3 shadow-sm">
       <nav class="navbar navbar-expand-lg bg-body-secondary">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="./index.html">
             <img src="./assets/imgs/Logo.png" alt="CycleSmart Logo" width="75px" />
             CycleSmart
           </a>
@@ -27,19 +27,23 @@
         </div>
       </nav>
     </header>
+    <div class="d-flex justify-content-center">
+      <div class="spinner-border text-success my-5" id="loadPage" style="width: 4rem; height: 4rem" role="status"></div>
+    </div>
+
     <main>
       <div class="container">
         <div id="bikeDetails">
           <h1 class="mt-5 mb-3 letter-spa" id="brand"></h1>
           <h3 id="title"></h3>
-          <img src="" alt="bike image" id="image" class="my-4 d-block img-fluid mx-auto" />
+          <img src="" alt="bike image" id="image" class="my-4 d-block mx-auto" style="max-width: 800px" />
           <p id="description"></p>
           <p id="price" class="text-end fs-5 fw-bolder"></p>
         </div>
 
         <div class="">
-          <a href="./index.html" class="btn btn-primary">Torna alla home</a>
-          <button id="btnEdit" class="btn btn-warning">Modifica</button>
+          <a href="./index.html" class="btn btn-primary d-none">Torna alla home</a>
+          <button id="btnEdit" class="btn btn-warning d-none">Modifica</button>
         </div>
       </div>
     </main>
